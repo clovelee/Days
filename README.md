@@ -1,2 +1,0 @@
-# Days
-Record your life.
