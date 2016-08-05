@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{day}}</ion-title>
+
+        <ion-buttons end>
+            <button (click)="dismiss()">
+              <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="home day">
+    
+    <ion-list no-lines>
+        <ion-item *ngFor="let item of items" (click)="viewItem(item)">
+            <span class="time">{{item.createdAt | date:'HH:mm'}}</span> {{item.title}} 
+        </ion-item>
+    </ion-list>
+
+</ion-content>

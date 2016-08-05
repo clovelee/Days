@@ -1,0 +1,16 @@
+<ion-content padding class="add-item">
+
+    <ion-list>
+        <ion-item no-lines>
+            <ion-buttons end><button clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button></ion-buttons>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating> 现在正在做什么？</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.title"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <button block outline class="mg40" (click)="saveItem()">完成</button>
+
+</ion-content>

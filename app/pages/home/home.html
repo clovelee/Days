@@ -1,0 +1,33 @@
+<ion-header class="header">
+
+  <ion-navbar>
+    <button menuToggle (click)="openMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title style="color:#3cf">
+      今天
+    </ion-title>
+
+    <ion-buttons end>
+      <button (click)="alertModel()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="home">
+  <ion-list-header text-center>{{today}}</ion-list-header>
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">
+      <span class="time">{{item.createdAt | date:'HH:mm'}}</span>{{item.title}}
+    </ion-item>
+  </ion-list>
+
+  <div>
+    <button fab fab-center fab-bottom (click)="addItem()"><ion-icon name="add"></ion-icon></button>
+  </div>
+
+</ion-content>

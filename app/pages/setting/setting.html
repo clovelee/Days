@@ -1,0 +1,49 @@
+<ion-header>
+
+    <ion-navbar>
+        <button menuToggle (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+    </button>
+
+        <ion-title>设置</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="setting">
+    <ion-list>
+
+        <ion-item>
+            <ion-label>出生日期</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myYear"></ion-datetime>
+        </ion-item>
+
+        <!--
+        <button full light round>计算天数</button>
+        -->
+        
+        <ion-item>
+            <ion-label>提醒</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>声音</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>提醒频次</ion-label>
+            <ion-select [(ngModel)]="toppings" cancelText="取消" okText="完成">
+                <ion-option value="bacon">每天提醒3次</ion-option>
+                <ion-option value="olives">每天提醒5次</ion-option>
+                <ion-option value="xcheese" checked="true">每天提醒10次</ion-option>
+                <ion-option value="peppers">每天提醒15次</ion-option>
+                <ion-option value="peppers">每天提醒30次</ion-option>
+            </ion-select>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>

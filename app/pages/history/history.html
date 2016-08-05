@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+
+        <button menuToggle (click)="openMenu()"><ion-icon name="menu"></ion-icon></button>
+        <ion-title>过去</ion-title>
+
+        <ion-buttons end>
+            <button (click)="goHome()">今天</button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="history">
+
+    <ion-list>
+        <ion-item *ngFor="let history of historyList" (click)="openDayListPage(history.date)">{{history.date}}
+            <ion-badge item-right>{{history.count}}</ion-badge>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

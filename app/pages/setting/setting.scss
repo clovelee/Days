@@ -1,0 +1,19 @@
+$bdcolor: #e9e9e9;
+
+
+.setting{
+
+    ion-list {
+
+        .item {
+            
+             padding-left: 0;
+
+            .item-inner{
+                border-color: $bdcolor;
+                padding-left: 20px;
+            }
+        }
+    }
+
+}

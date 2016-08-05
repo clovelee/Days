@@ -1,0 +1,46 @@
+
+$font-stack:helvetica,arial,sans-serif ;
+$ftcolor: #4e3e41;
+$btncolor:#3cf;
+
+.header {
+    border: none !important;
+    color: #3cf;
+
+    ion-navbar {
+        border: none !important;
+    }
+    
+    ion-title {
+        font-family: 'Microsoft Yahei',sans-serif !important;
+    }
+}
+
+.home {
+
+    font: 100% $font-stack;
+    
+
+    ion-list-header {
+        font-size: 1.25em!important;
+        line-height: 2em;
+        margin-top: 1em;
+        padding-left: 0 !important;
+        color: $ftcolor;
+        border: none;
+    }
+
+    ion-item {
+        line-height: 1.5em;
+        font-size: 1.25em;
+        padding-left: 5em;
+        color: $ftcolor;
+    }
+
+  .time {
+      color: #999;
+      padding-right:2em;
+  }
+
+
+}
