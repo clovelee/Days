@@ -45,6 +45,6 @@
       "locator": "ios"
     }
   ],
-  "name": "ionic-todo",
-  "description": "ionic-todo: An Ionic project"
+  "name": "ionic-note",
+  "description": "ionic-note: An Ionic project"
 }

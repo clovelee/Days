@@ -7,8 +7,8 @@ import {HomePage} from '../home/home';
 import {AddItemModal} from '../add-item/add-item';
 import {DayListPage} from '../day/day';
 
-import {TodoService} from '../../services/todoService';
-import {Todo} from '../../models/todo';
+import {NoteService} from '../../services/noteService';
+import {Note} from '../../models/note';
 import {History} from '../../models/history';
 
 @Component({
@@ -20,7 +20,7 @@ export class HistoryPage {
   date: Date;
   historyList: Array<History>;
 
-  constructor(navCtrl: NavController, menu: MenuController, private todoService: TodoService) {
+  constructor(navCtrl: NavController, menu: MenuController, private noteService: NoteService) {
     this.nav = navCtrl;
     this.menu = menu;
 
@@ -29,7 +29,7 @@ export class HistoryPage {
 
   //初始化页面
   initPage() {
-    this.historyList = this.todoService.getHistoryList();
+    this.historyList = this.noteService.getHistoryList();
   }
 
   //打开左侧菜单栏

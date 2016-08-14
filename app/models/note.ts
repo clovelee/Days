@@ -1,6 +1,6 @@
 
-// Todo实体类
-export class Todo {
+// Note实体类
+export class Note {
     title: string;
     createdAt: Date;
 

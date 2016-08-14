@@ -3,25 +3,25 @@ import {NavController} from 'ionic-angular';
 import {NavParams} from 'ionic-angular';
 import {ViewController} from 'ionic-angular';
 
-import {TodoService} from '../../services/todoService';
-import {Todo} from '../../models/todo';
+import {NoteService} from '../../services/noteService';
+import {Note} from '../../models/note';
 
 @Component({
     templateUrl: 'build/pages/add-item/add-item.html',
 })
 export class AddItemModal {
-    todo: Todo;
-    todoService: TodoService;
+    note: Note;
+    noteService: NoteService;
 
-    constructor(private nav: NavController, todoService: TodoService,public viewCtrl: ViewController) {
-        this.todoService = todoService;
-        this.todo = new Todo("", null);
+    constructor(private nav: NavController, noteService: NoteService,public viewCtrl: ViewController) {
+        this.noteService = noteService;
+        this.note = new Note("", null);
     }
 
-    // 保存todo
+    // 保存note
     saveItem() {
-        this.todo.createdAt = new Date();
-        this.todoService.addTodoItem(this.todo);
+        this.note.createdAt = new Date();
+        this.noteService.addNoteItem(this.note);
         this.nav.pop();
     }
 

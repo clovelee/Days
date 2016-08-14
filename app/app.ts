@@ -8,12 +8,12 @@ import {SetPage} from './pages/setting/setting';
 import {AdvicePage} from './pages/advice/advice';
 import {AboutPage} from './pages/about/about';
 
-import {TodoService} from './services/todoService';
+import {NoteService} from './services/noteService';
 
 
 @Component({
   templateUrl: 'build/app.html',
-  providers: [TodoService]
+  providers: [NoteService]
 })
 
 

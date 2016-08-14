@@ -1,19 +1,19 @@
 import {Injectable} from '@angular/core';
-import {Todo} from '../models/todo';
+import {Note} from '../models/note';
 import {History} from '../models/history';
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
 /**
- * Todo服务类
+ * Note服务类
  */
 @Injectable()
-export class TodoService {
-    //todo数据
-    todos: Array<Todo>;
+export class NoteService {
+    //note数据
+    notes: Array<Note>;
 
     constructor() {
-        this.todos = [
+        this.notes = [
             { title: '刷朋友圈', createdAt: new Date(2016, 7, 3, 18, 20, 30) },
             { title: '看TED', createdAt: new Date(2016, 7, 3, 8, 20, 30) },
             { title: '吃晚餐', createdAt: new Date(2016, 7, 3, 12, 20, 30) },
@@ -51,7 +51,7 @@ export class TodoService {
 
     //获取所有历史统计
     getHistoryList(): Array<History> {
-        let result = _.groupBy(this.todos, (item) => {
+        let result = _.groupBy(this.notes, (item) => {
             return moment(item.createdAt).format("YYYY-MM-DD");
         });
 
@@ -62,9 +62,9 @@ export class TodoService {
         return _.orderBy(historyList, 'date', 'desc');
     }
 
-    //获取某一天的todo列表
-    getTodoListByDate(date: string): Array<Todo> {
-        let dayList = _.filter(this.todos, (item) => {
+    //获取某一天的note列表
+    getNoteListByDate(date: string): Array<Note> {
+        let dayList = _.filter(this.notes, (item) => {
             return moment(item.createdAt).format("YYYY-MM-DD") == date
         });
 
@@ -72,8 +72,8 @@ export class TodoService {
         return result;
     }
 
-    //添加一条todo
-    addTodoItem(item: Todo) {
-        this.todos.push(item);
+    //添加一条note
+    addNoteItem(item: Note) {
+        this.notes.push(item);
     }
 }

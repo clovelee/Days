@@ -4,8 +4,8 @@ import {Modal} from 'ionic-angular';
 import {NavController} from 'ionic-angular';
 import {ViewController} from 'ionic-angular';
 
-import {TodoService} from '../../services/todoService';
-import {Todo} from '../../models/todo';
+import {NoteService} from '../../services/noteService';
+import {Note} from '../../models/note';
 
 @Component({
     templateUrl: 'build/pages/day/day.html',
@@ -13,22 +13,22 @@ import {Todo} from '../../models/todo';
 
 export class DayListPage {
     day: string;
-    items: Array<Todo>;
+    items: Array<Note>;
 
     constructor(
         private navCtrl: NavController,
         private params: NavParams,
-        private todoService: TodoService,
+        private noteService: NoteService,
         private menu: MenuController,
         public viewCtrl: ViewController
     ) {
         this.day = params.get("date");
-        this.loadTodoList();
+        this.loadNoteList();
     }
 
-    // 获取所有的todo list
-    private loadTodoList() {
-        this.items = this.todoService.getTodoListByDate(this.day);
+    // 获取所有的note list
+    private loadNoteList() {
+        this.items = this.noteService.getNoteListByDate(this.day);
     }
 
     //关闭dayModal

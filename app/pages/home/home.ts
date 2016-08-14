@@ -4,8 +4,8 @@ import {Modal} from 'ionic-angular';
 import {Alert} from 'ionic-angular';
 import {NavController} from 'ionic-angular';
 import {AddItemModal} from '../add-item/add-item';
-import {TodoService} from '../../services/todoService';
-import {Todo} from '../../models/todo';
+import {NoteService} from '../../services/noteService';
+import {Note} from '../../models/note';
 import * as moment from 'moment';
 
 @Component({
@@ -15,23 +15,23 @@ export class HomePage {
   nav: NavController;
   menu: MenuController;
   today: string;
-  items: Array<Todo>;
-  todoService: TodoService;
+  items: Array<Note>;
+  noteService: NoteService;
 
-  constructor(navCtrl: NavController, todoService: TodoService, menu: MenuController) {
+  constructor(navCtrl: NavController, noteService: NoteService, menu: MenuController) {
 
     this.today = moment().format("YYYY-MM-DD");
 
     this.nav = navCtrl;
     this.menu = menu;
 
-    this.todoService = todoService;
-    this.loadTodoList();
+    this.noteService = noteService;
+    this.loadNoteList();
   }
 
-  // 获取所有的todo list
-  private loadTodoList() {
-    this.items = this.todoService.getTodoListByDate(this.today);
+  // 获取所有的note list
+  private loadNoteList() {
+    this.items = this.noteService.getNoteListByDate(this.today);
   }
 
   //打开左侧菜单栏
@@ -68,10 +68,10 @@ export class HomePage {
     this.nav.present(prompt);
   }
 
-  // 打开新增一条todo的页面
+  // 打开新增一条note的页面
   addItem() {
     let modal = Modal.create(AddItemModal);
     this.nav.present(modal);
-    this.loadTodoList();
+    this.loadNoteList();
   }
 }
