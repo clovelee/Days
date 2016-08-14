@@ -64,9 +64,11 @@ export class TodoService {
 
     //获取某一天的todo列表
     getTodoListByDate(date: string): Array<Todo> {
-        let result = _.filter(this.todos, (item) => {
+        let dayList = _.filter(this.todos, (item) => {
             return moment(item.createdAt).format("YYYY-MM-DD") == date
         });
+
+        let result = _.orderBy(dayList, 'createdAt', 'asc');
         return result;
     }
 
